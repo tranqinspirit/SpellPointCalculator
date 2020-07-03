@@ -7,7 +7,7 @@ def SpellPointCost(castingLevel):
     return spellcost[castingLevel]
 
 def main():
-    level = 21
+    level = 8
     haveCastlevel6 = False
     haveCastlevel7 = False
     haveCastlevel8 = False
