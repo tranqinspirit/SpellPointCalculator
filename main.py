@@ -7,18 +7,26 @@ def SpellPointCost(castingLevel):
     return spellcost[castingLevel]
 
 def main():
-    level = 8
+    level = 21
     haveCastlevel6 = False
     haveCastlevel7 = False
     haveCastlevel8 = False
     haveCastlevel9 = False
+    
+    if level > 20:
+        print("Invalid character level")
+        return
     
     spellPoints = SpellPointsAvailable(level)
     print("Spell Point Pool: " + str(spellPoints))
     
     while spellPoints > 0:
         castingLevel = int(input("Spell Level: "))
-        pointsUsed = SpellPointCost(castingLevel)
+        if castingLevel > 9:
+            print("Invalid spell level" + "\n")
+            continue
+        else:
+            pointsUsed = SpellPointCost(castingLevel)
         
         if castingLevel == 6 and haveCastlevel6 == True:
             print("6th Level spell already used for the day" + "\n")
